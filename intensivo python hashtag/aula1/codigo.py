@@ -1,6 +1,7 @@
 import pyautogui
 import time
 import pandas as pd
+from pathlib import Path
 
 pyautogui.PAUSE = 0.5
 #Entrar no navegador
@@ -15,4 +16,12 @@ pyautogui.write("file:///C:/Users/Jo%C3%A3o%20Pedro/Documents/Treinos%20de%20pyt
 pyautogui.press("enter")
 time.sleep(2)
 
+#Importar os dados
+PROJECT_DIR = Path(__file__).parent
+path = PROJECT_DIR / 'produtos.csv'
+tabela = pd.read_csv(path)
+
 #Inserir os dados
+pyautogui.click(x=591, y=333)
+pyautogui.write("teste")
+pyautogui.press("tab")
