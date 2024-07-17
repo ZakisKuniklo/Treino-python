@@ -22,6 +22,27 @@ path = PROJECT_DIR / 'produtos.csv'
 tabela = pd.read_csv(path)
 
 #Inserir os dados
-pyautogui.click(x=591, y=333)
-pyautogui.write("teste")
-pyautogui.press("tab")
+for linha in tabela.index:
+    pyautogui.click(x=591, y=333)
+    pyautogui.write(str(tabela.loc[linha,"codigo"]))
+    pyautogui.press("tab")
+    pyautogui.write(str(tabela.loc[linha,"marca"]))
+    pyautogui.press("tab")
+    pyautogui.write(str(tabela.loc[linha,"tipo"]))
+    pyautogui.press("tab")
+    pyautogui.write(str(tabela.loc[linha,"categoria"]))
+    pyautogui.press("tab")
+    pyautogui.write(str(tabela.loc[linha,"preco_unitario"]))
+    pyautogui.press("tab")
+    pyautogui.write(str(tabela.loc[linha,"custo"]))
+    pyautogui.press("tab")
+    pyautogui.write(str(tabela.loc[linha,"obs"]))
+    pyautogui.scroll(-5000)
+    pyautogui.click(x=624, y=745)
+    pyautogui.scroll(5000)
+
+
+
+
+
+
